@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
 )
 
 // Configuration for finding tool binaries.

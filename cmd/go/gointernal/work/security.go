@@ -34,7 +34,7 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/gwaylib/goget/cmd/go/gointernal/load"
+	"github.com/gwaycc/goget/cmd/go/gointernal/load"
 )
 
 var re = regexp.MustCompile

@@ -18,9 +18,9 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/gwaylib/goget/cmd/go/gointernal/base"
-	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
-	"github.com/gwaylib/goget/cmd/go/gointernal/str"
+	"github.com/gwaycc/goget/cmd/go/gointernal/base"
+	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaycc/goget/cmd/go/gointernal/str"
 )
 
 var IgnoreImports bool // control whether we ignore imports in packages

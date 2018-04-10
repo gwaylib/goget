@@ -18,8 +18,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
-	"github.com/gwaylib/goget/cmd/go/gointernal/str"
+	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaycc/goget/cmd/go/gointernal/str"
 )
 
 // A Command is an implementation of a go command

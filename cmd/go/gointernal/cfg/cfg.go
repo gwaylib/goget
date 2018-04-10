@@ -13,7 +13,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/gwaylib/goget/cmd/gointernal/objabi"
+	"github.com/gwaycc/goget/cmd/gointernal/objabi"
 )
 
 // These are general "build flags" used by build and other commands.

@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/gwaylib/goget/cmd/go/gointernal/base"
-	"github.com/gwaylib/goget/cmd/go/gointernal/str"
+	"github.com/gwaycc/goget/cmd/go/gointernal/base"
+	"github.com/gwaycc/goget/cmd/go/gointernal/str"
 )
 
 var (

@@ -7,8 +7,8 @@ package base
 import (
 	"flag"
 
-	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
-	"github.com/gwaylib/goget/cmd/go/gointernal/str"
+	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaycc/goget/cmd/go/gointernal/str"
 )
 
 // A StringsFlag is a command-line flag that interprets its argument
