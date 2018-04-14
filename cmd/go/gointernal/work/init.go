@@ -12,8 +12,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/gwaycc/goget/cmd/go/gointernal/base"
-	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaylib/goget/cmd/go/gointernal/base"
+	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
 )
 
 func BuildInit() {

@@ -12,12 +12,12 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/gwaycc/goget/cmd/go/gointernal/base"
-	"github.com/gwaycc/goget/cmd/go/gointernal/cache"
-	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
-	"github.com/gwaycc/goget/cmd/go/gointernal/load"
-	"github.com/gwaycc/goget/cmd/go/gointernal/str"
-	"github.com/gwaycc/goget/cmd/gointernal/buildid"
+	"github.com/gwaylib/goget/cmd/go/gointernal/base"
+	"github.com/gwaylib/goget/cmd/go/gointernal/cache"
+	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaylib/goget/cmd/go/gointernal/load"
+	"github.com/gwaylib/goget/cmd/go/gointernal/str"
+	"github.com/gwaylib/goget/cmd/gointernal/buildid"
 )
 
 // Build IDs

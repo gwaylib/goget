@@ -24,11 +24,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gwaycc/goget/cmd/go/gointernal/base"
-	"github.com/gwaycc/goget/cmd/go/gointernal/cache"
-	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
-	"github.com/gwaycc/goget/cmd/go/gointernal/load"
-	"github.com/gwaycc/goget/cmd/go/gointernal/str"
+	"github.com/gwaylib/goget/cmd/go/gointernal/base"
+	"github.com/gwaylib/goget/cmd/go/gointernal/cache"
+	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaylib/goget/cmd/go/gointernal/load"
+	"github.com/gwaylib/goget/cmd/go/gointernal/str"
 )
 
 // actionList returns the list of actions in the dag rooted at root

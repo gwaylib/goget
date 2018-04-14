@@ -21,8 +21,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
-	"github.com/gwaycc/goget/cmd/gointernal/browser"
+	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaylib/goget/cmd/gointernal/browser"
 )
 
 // httpClient is the default HTTP client, but a variable so it can be

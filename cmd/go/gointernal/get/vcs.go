@@ -18,10 +18,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/gwaycc/goget/cmd/go/gointernal/base"
-	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
-	"github.com/gwaycc/goget/cmd/go/gointernal/web"
-	"github.com/gwaycc/goget/gointernal/singleflight"
+	"github.com/gwaylib/goget/cmd/go/gointernal/base"
+	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaylib/goget/cmd/go/gointernal/web"
+	"github.com/gwaylib/goget/gointernal/singleflight"
 )
 
 // A vcsCmd describes how to use a version control system

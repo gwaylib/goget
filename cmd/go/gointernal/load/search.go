@@ -14,7 +14,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
 )
 
 // allPackages returns all the packages that can be found

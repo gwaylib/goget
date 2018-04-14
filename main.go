@@ -11,7 +11,7 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/gwaycc/goget/cmd/go/gointernal/get"
+	"github.com/gwaylib/goget/cmd/go/gointernal/get"
 )
 
 // Compare to $GOROOT/src/cmd/main.go

@@ -11,8 +11,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/gwaycc/goget/cmd/go/gointernal/cfg"
-	"github.com/gwaycc/goget/cmd/go/gointernal/config"
+	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
+	"github.com/gwaylib/goget/cmd/go/gointernal/config"
 )
 
 type IOReadCloser struct {
