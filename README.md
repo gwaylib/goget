@@ -19,9 +19,9 @@ goget
 
 # 配置.goget文件
 
-重定向配置.goget时, 优先在当前目录下查找.goget，若没有，查找$PJ_ROOT/.goget
+查找.goget配置文件时, 优先在当前目录下查找.goget，若没有，查找全局的$PJ_ROOT/.goget
 
-以下是配置文件格式，若未配置，goget源码中已内置以下的内容，可以直接使用goget访问golang.org/x/的包
+以下是配置文件格式，在goget源码中已内置以下的内容的配置文件，未配置.goget文件可以直接使用goget访问golang.org/x/的包
 ```text
 #
 # TODO: Implements goget configuration.
