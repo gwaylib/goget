@@ -1,6 +1,6 @@
 # 本地搭建go get的MetaImport
 
-在中国的某墙的作用下，若不翻墙，无法go get到某些包，于是对go get的源码进行了些修改，就可以本地直接配置go get的MetaImport值，在联网前直接本地重定向。
+在中国的某墙的作用下，若不翻墙无法go get到某些包，于是对go get的源码进行了些修改，在本地直接配置go get的MetaImport值，在联网前直接本地重定向go-metaimport。
 
 本代码修改自go1.9的go get源码, 编译依赖于go1.9及以上, [go源码地址](https://github.com/golang/go)
 
