@@ -1,6 +1,6 @@
-# 本地搭建go get的MetaImport
+# Go MetaImport本地重定向
 
-在中国的某墙的作用下，若不翻墙无法go get到某些包，于是对go get的源码进行了些修改，在本地直接配置go get的MetaImport值，在联网前直接本地重定向go-metaimport。
+对go get的源码进行了些修改，使得本地可以直接配置go get的MetaImport值，在连网之前直接本地重定向以便跳过获取go远程包被强的问题。
 
 本代码修改自go1.9的go get源码, 编译依赖于go1.9及以上, [go源码地址](https://github.com/golang/go)。
 
@@ -15,6 +15,10 @@ go go -v -u github.com/gwaylib/goget
 go get 
 替换指令
 goget 
+```
+用例：
+```text
+goget -v golang.org/x/net/websocket
 ```
 
 # 配置.goget文件
