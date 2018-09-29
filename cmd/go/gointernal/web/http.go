@@ -75,11 +75,6 @@ func Get(url string) ([]byte, error) {
 // GetMaybeInsecure returns the body of either the importPath's
 // https resource or, if unavailable and permitted by the security mode, the http resource.
 func GetMaybeInsecure(importPath string, security SecurityMode) (urlStr string, body io.ReadCloser, err error) {
-	// 强制检查x包
-	if u, b := gometa.Local(importPath); b != nil {
-		return u, b, nil
-	}
-
 	fetch := func(scheme string) (urlStr string, res *http.Response, err error) {
 		u, err := url.Parse(scheme + "://" + importPath)
 		if err != nil {
@@ -90,6 +85,15 @@ func GetMaybeInsecure(importPath string, security SecurityMode) (urlStr string, 
 		if cfg.BuildV {
 			log.Printf("Fetching %s", urlStr)
 		}
+
+		// 读取本地解析,若存在，直接返回
+		if body := gometa.Local(importPath); body != nil {
+			return urlStr, &http.Response{
+				StatusCode: 200,
+				Body:       body,
+			}, nil
+		}
+
 		if security == Insecure && scheme == "https" { // fail earlier
 			res, err = impatientInsecureHTTPClient.Get(urlStr)
 		} else {

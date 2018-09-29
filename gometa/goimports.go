@@ -5,13 +5,11 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"net/url"
 	"os"
 	"regexp"
 	"strings"
 	"sync"
 
-	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
 	"github.com/gwaylib/goget/gometa/config"
 )
 
@@ -81,11 +79,11 @@ func init() {
 }
 
 // export goget function
-func Local(importPath string) (urlStr string, body io.ReadCloser) {
+func Local(importPath string) (body io.ReadCloser) {
 	return goget(importPath)
 }
 
-func goget(importPath string) (urlStr string, body io.ReadCloser) {
+func goget(importPath string) (body io.ReadCloser) {
 	gogetLock.RLock()
 	defer gogetLock.RUnlock()
 
@@ -94,44 +92,19 @@ func goget(importPath string) (urlStr string, body io.ReadCloser) {
 		if !opt.MatchString(importPath) {
 			continue
 		}
-		u, err := url.Parse("https://" + importPath)
-		if err != nil {
-			return
-		}
-		u.RawQuery = "go-get=1"
-		urlStr = u.String()
-
-		if cfg.BuildV {
-			log.Printf("Fetching %s", urlStr)
-		}
-
 		// 包信息数据
 		gImport, _ := gogetImports[key]
-		body = &IOReadCloser{Reader: strings.NewReader(fmt.Sprintf(`<html><head><meta content='%s %s %s' name='go-import'></head></html>`, gImport.Prefix, gImport.VCS, gImport.RepoRoot))}
-		return urlStr, body
+		return &IOReadCloser{Reader: strings.NewReader(fmt.Sprintf(`<html><head><meta content='%s %s %s' name='go-import'></head></html>`, gImport.Prefix, gImport.VCS, gImport.RepoRoot))}
 	}
 
-	// 强制将golang.org/x包转到github/golang
+	// 若不存在本地配置数据，默认将golang.org/x包强转至github/golang
 	if strings.Contains(importPath, "golang.org/x/") {
 		// 解析包
 		paths := strings.Split(importPath, "/")
 		if len(paths) > 2 {
-			u, err := url.Parse("https://" + importPath)
-			if err != nil {
-				return
-			}
-			u.RawQuery = "go-get=1"
-			urlStr = u.String()
-
-			if cfg.BuildV {
-				log.Printf("Fetching %s", urlStr)
-			}
-
 			pkgName := strings.Join(paths[:3], "/")
 			gitUrl := "https://github.com/golang/" + paths[2] + ".git"
-			body = &IOReadCloser{Reader: strings.NewReader(fmt.Sprintf(`<html><head><meta content='%s git %s' name='go-import'></head></html>`, pkgName, gitUrl))}
-
-			return urlStr, body
+			return &IOReadCloser{Reader: strings.NewReader(fmt.Sprintf(`<html><head><meta content='%s git %s' name='go-import'></head></html>`, pkgName, gitUrl))}
 		}
 	}
 	return
