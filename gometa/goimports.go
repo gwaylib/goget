@@ -1,4 +1,4 @@
-package web
+package gometa
 
 import (
 	"encoding/json"
@@ -12,7 +12,7 @@ import (
 	"sync"
 
 	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
-	"github.com/gwaylib/goget/cmd/go/gointernal/config"
+	"github.com/gwaylib/goget/gometa/config"
 )
 
 type IOReadCloser struct {
@@ -80,6 +80,11 @@ func init() {
 	return
 }
 
+// export goget function
+func Local(importPath string) (urlStr string, body io.ReadCloser) {
+	return goget(importPath)
+}
+
 func goget(importPath string) (urlStr string, body io.ReadCloser) {
 	gogetLock.RLock()
 	defer gogetLock.RUnlock()
@@ -106,8 +111,6 @@ func goget(importPath string) (urlStr string, body io.ReadCloser) {
 		return urlStr, body
 	}
 
-	// by default check golang x
-
 	// 强制将golang.org/x包转到github/golang
 	if strings.Contains(importPath, "golang.org/x/") {
 		// 解析包
@@ -119,6 +122,7 @@ func goget(importPath string) (urlStr string, body io.ReadCloser) {
 			}
 			u.RawQuery = "go-get=1"
 			urlStr = u.String()
+
 			if cfg.BuildV {
 				log.Printf("Fetching %s", urlStr)
 			}

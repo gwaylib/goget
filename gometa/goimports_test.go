@@ -1,4 +1,4 @@
-package web
+package gometa
 
 import (
 	"io/ioutil"

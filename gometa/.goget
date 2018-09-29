@@ -1,0 +1,15 @@
+[DEFAULT]
+#
+# TODO: Implements goget configuration.
+# Library version default by go1 tag
+# others version work like gopkg.in version control
+#
+# this is configuration depend on $PJ_ROOT enviorement for looking up the root of project.
+#
+
+
+# Prefix				MetaImport
+golang.org/x/net:			{"Prefix":"golang.org/x/net", "VCS":"git", "RepoRoot":"https://github.com/golang/net.git"} 
+golang.org/x/net/context:		{"Prefix":"golang.org/x/net", "VCS":"git", "RepoRoot":"https://github.com/golang/net.git"} 
+git.ot24.net/go/engine*:		{"Prefix":"git.ot24.net/go/engine", "VCS":"git", "RepoRoot":"https://git.ot24.net/go/engine.git"} 
+

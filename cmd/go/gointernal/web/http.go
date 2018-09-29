@@ -23,6 +23,7 @@ import (
 
 	"github.com/gwaylib/goget/cmd/go/gointernal/cfg"
 	"github.com/gwaylib/goget/cmd/gointernal/browser"
+	"github.com/gwaylib/goget/gometa"
 )
 
 // httpClient is the default HTTP client, but a variable so it can be
@@ -75,7 +76,7 @@ func Get(url string) ([]byte, error) {
 // https resource or, if unavailable and permitted by the security mode, the http resource.
 func GetMaybeInsecure(importPath string, security SecurityMode) (urlStr string, body io.ReadCloser, err error) {
 	// 强制检查x包
-	if u, b := goget(importPath); b != nil {
+	if u, b := gometa.Local(importPath); b != nil {
 		return u, b, nil
 	}
 
